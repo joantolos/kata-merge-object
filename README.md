@@ -7,6 +7,6 @@ Using reflection to merge two objects. The second prevails over the first, the r
 
 The result is a third object merged with the rules above.
 
-This exercise is explained on: http://www.joantolos.com/blog/mergeObject
+This exercise is explained on: http://www.joantolos.com/blog/mergeobject
 
  
