@@ -1,0 +1,33 @@
+{
+  "id":1,
+  "name":"My Config",
+  "clearances":[
+    0,
+    1
+  ],
+  "defaultDescription":{
+    "name":"sub",
+    "description":"My Local Description"
+  },
+  "enabled": false,
+  "descriptions":[
+    {
+      "name":"My Local Subconfig list element one",
+      "description":"Random description"
+    },
+    {
+      "name":"My Local Subconfig list element two",
+      "description":"Random description",
+      "details":[
+        {
+          "name":"My detail name number one",
+          "condition":"My Condition"
+        },
+        {
+          "name":"My detail name number two",
+          "condition":"My Condition"
+        }
+      ]
+    }
+  ]
+}

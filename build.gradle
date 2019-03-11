@@ -1,0 +1,44 @@
+plugins {
+    id 'java'
+    id 'groovy'
+    id 'jacoco'
+}
+
+group 'com.joantolos'
+version '1.0-SNAPSHOT'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'org.codehaus.groovy:groovy-all:2.5.4'
+
+    testImplementation 'org.spockframework:spock-core:1.2-groovy-2.5'
+    testImplementation 'junit:junit:4.12'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("${project.buildDir}/jacoco/reports")
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+    }
+}
+
+dependencies {
+    compile("com.fasterxml.jackson.core:jackson-core:2.9.7")
+    compile("com.fasterxml.jackson.core:jackson-databind:2.9.7")
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}

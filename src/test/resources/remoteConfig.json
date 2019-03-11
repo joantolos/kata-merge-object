@@ -1,0 +1,11 @@
+{
+  "clearances":[
+    1,
+    2,
+    3
+  ],
+  "enabled": true,
+  "defaultDescription":{
+    "description":"My Remote Description"
+  }
+}
