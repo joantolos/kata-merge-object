@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Merger {
 
-    private static final List<String> PRIMITIVE_JSON_TYPES = Arrays.asList("Integer", "Integer[]", "String", "String[]", "Boolean", "boolean[]", "ArrayList");
+    private final List<String> PRIMITIVE_JSON_TYPES = Arrays.asList("Long", "Long[]", "Integer", "Integer[]", "String", "String[]", "Boolean", "boolean[]", "ArrayList", "LinkedHashMap");
 
     @SuppressWarnings("unchecked")
     public <T> T merge(T local, T remote) throws IllegalAccessException, InstantiationException {
