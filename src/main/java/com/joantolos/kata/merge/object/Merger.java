@@ -19,15 +19,21 @@ public class Merger {
             Object localValue = field.get(local);
             Object remoteValue = field.get(remote);
 
-            if (localValue != null) {
-                if(PRIMITIVE_JSON_TYPES.contains(localValue.getClass().getSimpleName())) {
-                    field.set(merged, (remoteValue != null) ? remoteValue : localValue);
+            if (localValue == null && remoteValue != null) {
+                if (PRIMITIVE_JSON_TYPES.contains(remoteValue.getClass().getSimpleName())) {
+                    field.set(merged, remoteValue);
                 } else {
-                    field.set(merged, this.merge(localValue, remoteValue));
+                    field.set(merged, merge(localValue, remoteValue));
+                }
+            } else if (localValue != null) {
+                if (PRIMITIVE_JSON_TYPES.contains(localValue.getClass().getSimpleName())) {
+                    field.set(merged, localValue);
+                } else {
+                    field.set(merged, merge(localValue, remoteValue));
                 }
             }
         }
+
         return (T) merged;
     }
-
 }
